@@ -40,7 +40,7 @@ namespace ValheimPlus.GameClasses
                 __result = Configuration.Current.Game.forceConsole;
                 return false;
             }
-                
+
             return true;
         }
     }

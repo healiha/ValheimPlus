@@ -1,6 +1,6 @@
 ﻿namespace ValheimPlus.Configurations.Sections
 {
-    public class StaminaConfiguration : ServerSyncConfig <StaminaConfiguration>
+    public class StaminaConfiguration : ServerSyncConfig<StaminaConfiguration>
     {
         public float dodgeStaminaUsage { get; internal set; } = 0;
         public float encumberedStaminaDrain { get; internal set; } = 0;

@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using BepInEx;
+using System.Collections.Generic;
 using System.IO;
-using BepInEx;
 using ValheimPlus.Configurations;
 
 namespace ValheimPlus.RPC
@@ -49,8 +49,8 @@ namespace ValheimPlus.RPC
             }
             else //Client
             {
-                if (configPkg != null && 
-                    configPkg.Size() > 0 && 
+                if (configPkg != null &&
+                    configPkg.Size() > 0 &&
                     sender == ZRoutedRpc.instance.GetServerPeerID()) //Validate the message is from the server and not another client.
                 {
                     int numLines = configPkg.ReadInt();
@@ -78,7 +78,7 @@ namespace ValheimPlus.RPC
                             ValheimPlusPlugin.harmony.UnpatchSelf();
 
                             // Sync HotKeys when connecting ?
-                            if(Configuration.Current.Server.IsEnabled && Configuration.Current.Server.serverSyncHotkeys)
+                            if (Configuration.Current.Server.IsEnabled && Configuration.Current.Server.serverSyncHotkeys)
                             {
                                 isConnecting = true;
                                 Configuration.Current = ConfigurationExtra.LoadFromIni(memStream);
@@ -88,7 +88,7 @@ namespace ValheimPlus.RPC
                             {
                                 Configuration.Current = ConfigurationExtra.LoadFromIni(memStream);
                             }
-                                
+
                             ValheimPlusPlugin.harmony.PatchAll();
 
                             ZLog.Log("Successfully synced VPlus configuration from server.");

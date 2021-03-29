@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ValheimPlus.Configurations.Sections
 {
@@ -10,7 +6,7 @@ namespace ValheimPlus.Configurations.Sections
     {
         public KeyCode enterAdvancedEditingMode { get; internal set; } = KeyCode.Keypad0;
         public KeyCode resetAdvancedEditingMode { get; internal set; } = KeyCode.F7;
-        public KeyCode abortAndExitAdvancedEditingMode { get; internal set; } =  KeyCode.F8;
+        public KeyCode abortAndExitAdvancedEditingMode { get; internal set; } = KeyCode.F8;
         public KeyCode confirmPlacementOfAdvancedEditingMode { get; internal set; } = KeyCode.KeypadEnter;
         public KeyCode copyObjectRotation { get; set; } = KeyCode.Keypad7;
         public KeyCode pasteObjectRotation { get; set; } = KeyCode.Keypad8;

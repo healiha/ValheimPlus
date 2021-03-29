@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using BepInEx;
+﻿using BepInEx;
+using System.Collections.Generic;
 
 namespace ValheimPlus.Utility
 {

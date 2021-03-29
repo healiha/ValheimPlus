@@ -26,7 +26,7 @@ namespace ValheimPlus.Configurations
         }
 
         public bool IsEnabled = false;
-        public virtual bool NeedsServerSync { get; set;} = false;
+        public virtual bool NeedsServerSync { get; set; } = false;
 
         public static IniData iniUpdated = null;
 
@@ -34,7 +34,7 @@ namespace ValheimPlus.Configurations
         {
             var n = new T();
 
-            
+
             Debug.Log($"Loading config section {section}");
             if (data[section] == null || data[section]["enabled"] == null || !data[section].GetBool("enabled"))
             {
@@ -61,7 +61,8 @@ namespace ValheimPlus.Configurations
                     keyName = char.ToLower(keyName[0]) + keyName.Substring(1);
                 }
 
-                if (!data.ContainsKey(keyName)) {
+                if (!data.ContainsKey(keyName))
+                {
                     Debug.Log($" Key {keyName} not defined, using default value");
                     continue;
                 }
@@ -99,7 +100,8 @@ namespace ValheimPlus.Configurations
 
     }
 
-    public abstract class ServerSyncConfig<T>: BaseConfig<T> where T : IConfig, new() {
-        public override bool NeedsServerSync { get; set;} = true;
+    public abstract class ServerSyncConfig<T> : BaseConfig<T> where T : IConfig, new()
+    {
+        public override bool NeedsServerSync { get; set; } = true;
     }
 }

@@ -14,7 +14,7 @@ namespace ValheimPlus.GameClasses
         {
             private static void Prefix(ref CraftingStation __instance, ref float ___m_rangeBuild, GameObject ___m_areaMarker)
             {
-                if (Configuration.Current.Workbench.IsEnabled && Configuration.Current.Workbench.workbenchRange > 0) 
+                if (Configuration.Current.Workbench.IsEnabled && Configuration.Current.Workbench.workbenchRange > 0)
                 {
                     try
                     {
@@ -43,7 +43,7 @@ namespace ValheimPlus.GameClasses
         {
             private static bool Prefix(ref CraftingStation __instance, ref Player player, ref bool showMessage, ref bool __result)
             {
-                if(Configuration.Current.Workbench.disableRoofCheck && Configuration.Current.Workbench.IsEnabled)
+                if (Configuration.Current.Workbench.disableRoofCheck && Configuration.Current.Workbench.IsEnabled)
                 {
                     __instance.m_craftRequireRoof = false;
                 }

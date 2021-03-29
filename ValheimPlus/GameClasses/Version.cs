@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using HarmonyLib;
+﻿using HarmonyLib;
+using UnityEngine;
 using ValheimPlus.Configurations;
 
 namespace ValheimPlus.GameClasses

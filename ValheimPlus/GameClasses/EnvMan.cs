@@ -1,8 +1,4 @@
-﻿using HarmonyLib;
-using UnityEngine;
-using ValheimPlus.Configurations;
-
-namespace ValheimPlus.GameClasses
+﻿namespace ValheimPlus.GameClasses
 {
     public class TimeManipulation
     {

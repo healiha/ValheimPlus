@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using static ValheimPlus.VPlusDataObjects;
+﻿using static ValheimPlus.VPlusDataObjects;
 
 namespace ValheimPlus.Utility
 {

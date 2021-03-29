@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using ValheimPlus.Configurations;
-using ValheimPlus.Utility;
 
 namespace ValheimPlus
 {
@@ -103,7 +102,8 @@ namespace ValheimPlus
             // CHECK FOR BUILD MODE
             if (isInBuildMode())
             {
-                if (isActive) { 
+                if (isActive)
+                {
                     exitMode();
                     resetObjectTransform();
                 }
@@ -194,7 +194,8 @@ namespace ValheimPlus
 
                 // REMOVE OLD
                 ZNetView component1 = HitPiece.GetComponent<ZNetView>();
-                if ((UnityEngine.Object)component1 == (UnityEngine.Object)null) {
+                if ((UnityEngine.Object)component1 == (UnityEngine.Object)null)
+                {
                     Debug.Log("AEM: Error, network object empty.");
 
                     resetObjectTransform();
@@ -223,14 +224,14 @@ namespace ValheimPlus
 
             changeModificationSpeeds(shiftFlag);
 
-            if (shiftFlag) 
-            { 
+            if (shiftFlag)
+            {
                 distance = gDistance * 3;
                 scrollDistance = gScrollDistance * 3;
-            } 
-            else 
-            { 
-                distance = gDistance; 
+            }
+            else
+            {
+                distance = gDistance;
                 scrollDistance = gScrollDistance;
             }
 

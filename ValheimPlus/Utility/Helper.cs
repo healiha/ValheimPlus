@@ -1,18 +1,16 @@
 using System;
-using UnityEngine;
-using System.Linq;
-using System.Text;
-using System.Collections.Generic;
 using System.IO;
+using System.Text;
+using UnityEngine;
 
 namespace ValheimPlus
 {
     static class Helper
     {
-		public static Character getPlayerCharacter(Player __instance)
-		{
-			return (Character)__instance;
-		}
+        public static Character getPlayerCharacter(Player __instance)
+        {
+            return (Character)__instance;
+        }
 
         public static float tFloat(this float value, int digits)
         {
@@ -20,10 +18,10 @@ namespace ValheimPlus
             double result = Math.Truncate(mult * value) / mult;
             return (float)result;
         }
-         
+
         public static float applyModifierValue(float targetValue, float value)
         {
-            
+
             if (value <= -100)
                 value = -100;
 
@@ -78,7 +76,7 @@ namespace ValheimPlus
             }
         }
 
-        
+
         /// <summary>
         /// Resize child EffectArea's collision that matches the specified type(s).
         /// </summary>

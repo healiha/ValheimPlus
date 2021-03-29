@@ -65,7 +65,7 @@ namespace ValheimPlus
             if (isActive && component == null)
             {
                 if (isActive)
-                { 
+                {
                     exitMode();
                 }
 
@@ -75,8 +75,8 @@ namespace ValheimPlus
             // Check if prefab selected (build pieces) & ghost is ready
             if (selectedPrefab() == null || PlayerInstance.m_placementGhost == null)
             {
-                if (isActive) 
-                { 
+                if (isActive)
+                {
                     exitMode();
                 }
 
@@ -86,7 +86,7 @@ namespace ValheimPlus
             // Check if Build Mode && Correct build mode
             if (isInBuildMode() && IsHoeOrTerrainTool(selectedPrefab()))
             {
-                if(isActive)
+                if (isActive)
                     exitMode();
 
                 return;
@@ -133,13 +133,13 @@ namespace ValheimPlus
             float scrollDistance;
 
             if (shiftFlag)
-            {  
+            {
                 distance = gDistance * 3;
                 scrollDistance = gScrollDistance * 3;
-            } 
+            }
             else
-            { 
-                distance = gDistance; 
+            {
+                distance = gDistance;
                 scrollDistance = gScrollDistance;
             }
 
@@ -147,7 +147,8 @@ namespace ValheimPlus
             if (Input.GetKeyDown(KeyCode.LeftAlt)) { altFlag = true; }
             if (Input.GetKeyUp(KeyCode.LeftAlt)) { altFlag = false; }
 
-            if (Input.GetKeyUp(Configuration.Current.AdvancedBuildingMode.copyObjectRotation)) {
+            if (Input.GetKeyUp(Configuration.Current.AdvancedBuildingMode.copyObjectRotation))
+            {
                 savedRotation = component.transform.rotation;
             }
             if (Input.GetKeyUp(Configuration.Current.AdvancedBuildingMode.pasteObjectRotation))
@@ -385,7 +386,7 @@ namespace ValheimPlus
             if (shiftFlag)
                 incValue = 10;
 
-            if (Input.GetKeyDown(Configuration.Current.AdvancedBuildingMode.increaseScrollSpeed)) 
+            if (Input.GetKeyDown(Configuration.Current.AdvancedBuildingMode.increaseScrollSpeed))
             {
                 if ((gScrollDistance - incValue) < 360)
                     gScrollDistance += incValue;
@@ -399,7 +400,7 @@ namespace ValheimPlus
 
             if (Input.GetKeyDown(Configuration.Current.AdvancedBuildingMode.decreaseScrollSpeed))
             {
-                if((gScrollDistance-incValue) > 0)
+                if ((gScrollDistance - incValue) > 0)
                     gScrollDistance = gScrollDistance - incValue;
 
                 if ((gDistance - incValue) > 0)

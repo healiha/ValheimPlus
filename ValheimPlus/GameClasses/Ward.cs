@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using UnityEngine;
 using ValheimPlus.Configurations;
 
 namespace ValheimPlus.GameClasses
@@ -14,7 +13,7 @@ namespace ValheimPlus.GameClasses
         {
             private static void Prefix(ref PrivateArea __instance)
             {
-                if (Configuration.Current.Ward.IsEnabled && Configuration.Current.Ward.wardRange > 0) 
+                if (Configuration.Current.Ward.IsEnabled && Configuration.Current.Ward.wardRange > 0)
                 {
                     __instance.m_radius = Configuration.Current.Ward.wardRange;
 

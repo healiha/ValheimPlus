@@ -128,7 +128,7 @@ namespace ValheimPlus.GameClasses
                 Minimap.instance.WorldToPixel(pos, out int pixelX, out int pixelY);
 
                 int radiusPixels =
-                    (int) Mathf.Ceil(Configuration.Current.Map.exploreRadius / Minimap.instance.m_pixelSize);
+                    (int)Mathf.Ceil(Configuration.Current.Map.exploreRadius / Minimap.instance.m_pixelSize);
 
                 for (int y = pixelY - radiusPixels; y <= pixelY + radiusPixels; ++y)
                 {
@@ -136,8 +136,8 @@ namespace ValheimPlus.GameClasses
                     {
                         if (x >= 0 && y >= 0 &&
                             (x < Minimap.instance.m_textureSize && y < Minimap.instance.m_textureSize) &&
-                            ((double) new Vector2((float) (x - pixelX), (float) (y - pixelY)).magnitude <=
-                             (double) radiusPixels))
+                            ((double)new Vector2((float)(x - pixelX), (float)(y - pixelY)).magnitude <=
+                             (double)radiusPixels))
                         {
                             VPlusMapSync.ServerMapData[y * Minimap.instance.m_textureSize + x] = true;
                         }

@@ -7,7 +7,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
-using ValheimPlus.Utility;
 
 namespace ValheimPlus.Configurations
 {
@@ -20,7 +19,7 @@ namespace ValheimPlus.Configurations
             {
                 var keyName = prop.Name;
                 var method = prop.PropertyType.GetMethod("ServerSerializeSection", BindingFlags.Public | BindingFlags.FlattenHierarchy | BindingFlags.Instance);
-                
+
                 if (method != null)
                 {
                     var instance = prop.GetValue(config, null);
@@ -92,7 +91,7 @@ namespace ValheimPlus.Configurations
 
                     if (method != null)
                     {
-                        object result = method.Invoke(null, new object[] {configdata, keyName});
+                        object result = method.Invoke(null, new object[] { configdata, keyName });
                         prop.SetValue(conf, result, null);
                     }
                 }
@@ -105,7 +104,8 @@ namespace ValheimPlus.Configurations
     {
         public static float GetFloat(this KeyDataCollection data, string key, float defaultVal)
         {
-            if (float.TryParse(data[key], NumberStyles.Any, CultureInfo.InvariantCulture.NumberFormat, out var result)) { 
+            if (float.TryParse(data[key], NumberStyles.Any, CultureInfo.InvariantCulture.NumberFormat, out var result))
+            {
                 return result;
             }
 
@@ -121,7 +121,8 @@ namespace ValheimPlus.Configurations
 
         public static int GetInt(this KeyDataCollection data, string key, int defaultVal)
         {
-            if (int.TryParse(data[key], NumberStyles.Any, CultureInfo.InvariantCulture.NumberFormat, out var result)) { 
+            if (int.TryParse(data[key], NumberStyles.Any, CultureInfo.InvariantCulture.NumberFormat, out var result))
+            {
                 return result;
             }
 
@@ -131,7 +132,8 @@ namespace ValheimPlus.Configurations
 
         public static KeyCode GetKeyCode(this KeyDataCollection data, string key, KeyCode defaultVal)
         {
-            if (Enum.TryParse<KeyCode>(data[key], out var result)) {
+            if (Enum.TryParse<KeyCode>(data[key], out var result))
+            {
                 return result;
             }
 

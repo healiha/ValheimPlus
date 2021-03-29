@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
 using ValheimPlus.Configurations;
-using UnityEngine;
 
 namespace ValheimPlus.GameClasses
 {

@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
-using ValheimPlus.Configurations;
 using System.Collections.Generic;
+using ValheimPlus.Configurations;
 
 namespace ValheimPlus.GameClasses
 {
@@ -35,8 +35,8 @@ namespace ValheimPlus.GameClasses
         {
             if (Configuration.Current.Player.IsEnabled &&
                 Configuration.Current.Player.autoEquipShield &&
-                __result && 
-                __instance.IsPlayer() && 
+                __result &&
+                __instance.IsPlayer() &&
                 __instance.m_rightItem?.m_shared.m_itemType == ItemDrop.ItemData.ItemType.OneHandedWeapon &&
                 item.m_shared.m_itemType != ItemDrop.ItemData.ItemType.Shield)
             {
