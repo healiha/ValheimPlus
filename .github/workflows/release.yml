@@ -1,0 +1,39 @@
+name: release
+
+on:
+  workflow_dispatch:
+    inputs:
+      bepinex_version:
+        description: Version of BepInExPack for Valheim
+        required: true
+      release_version:
+        description: The version of this release
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      VALHEIM_INSTALL: ../required_data
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: "6.0"
+
+      - name: Install bsdtar
+        run: apt install libarchive-tools
+      
+      - name: Download BepInEx
+        run: |
+          wget -qO- "https://valheim.thunderstore.io/package/download/denikson/BepInExPack_Valheim/${{ github.event.inputs.bepinex_version }}/" | bsdtar -xf - BepInExPack_Valheim/
+          mv BepInExPack_Valheim required_data
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
